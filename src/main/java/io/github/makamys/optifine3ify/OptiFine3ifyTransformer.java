@@ -17,6 +17,9 @@ import org.objectweb.asm.tree.VarInsnNode;
 
 import net.minecraft.launchwrapper.IClassTransformer;
 
+/** <p>OptiFine D6 relies on the default class loader being an URLClassLoader in order to obtain a reference to its jar file.</p>
+ * <p>This class transformer replaces this with a Java 9+ compatible method, the same as the one used by E7.</p>
+ */
 public class OptiFine3ifyTransformer implements IClassTransformer {
     
     @Override
@@ -27,6 +30,18 @@ public class OptiFine3ifyTransformer implements IClassTransformer {
         return basicClass;
     }
  
+    /**
+     * <pre>
+     * public OptiFineClassTransformer() {
+     * ...
+     * -   URLClassLoader ucl = (URLClassLoader)OptiFineClassTransformer.class.getClassLoader();
+     * -   URL[] urls = ucl.getURLs();
+     * +   URLClassLoader ucl = (URLClassLoader)null;
+     * +   URL[] urls = OptiFine3ifyTransformer$Hooks.getOptiFineJarUrl();
+     * ...
+     * }
+     * </pre>
+     */
     private static byte[] doTransform(byte[] bytes) {
         LOGGER.info("OptiFine3ifyTransformer: Transforming OptiFineClassTransformer to add modern Java compat");
         
