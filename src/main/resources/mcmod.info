@@ -1,14 +1,14 @@
 [
 {
   "modid": "${modid}",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "name": "OptiFine3ify",
+  "description": "Makes OptiFine D6 compatible with Java 9+.",
   "version": "${version}",
   "mcversion": "${minecraft_version}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["makamys"],
+  "credits": "",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
