@@ -17,7 +17,6 @@ import org.objectweb.asm.tree.VarInsnNode;
 
 import net.minecraft.launchwrapper.IClassTransformer;
 
-// TODO don't do anything if hash is different from D6's
 public class OptiFine3ifyTransformer implements IClassTransformer {
     
     @Override
