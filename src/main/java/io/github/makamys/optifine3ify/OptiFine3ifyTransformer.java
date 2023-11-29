@@ -43,7 +43,7 @@ public class OptiFine3ifyTransformer implements IClassTransformer {
      * </pre>
      */
     private static byte[] doTransform(byte[] bytes) {
-        LOGGER.info("OptiFine3ifyTransformer: Transforming OptiFineClassTransformer to add modern Java compat");
+        LOGGER.info("OptiFine3ifyTransformer: Transforming OptiFineClassTransformer to add Java 9+ compat");
         
         InsnList callHook = new InsnList();
         callHook.add(new VarInsnNode(ALOAD, 0));
