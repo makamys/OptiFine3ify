@@ -13,6 +13,18 @@ public class OptiFine3ifyTweaker implements ITweaker {
 
     public OptiFine3ifyTweaker() {
         //OptiFine3ifyInjector.run();
+        
+    }
+    
+    @Override
+    public void acceptOptions(List<String> args, File gameDir, File assetsDir, String profile) {
+        
+    }
+
+    @Override
+    public void injectIntoClassLoader(LaunchClassLoader classLoader) {
+        System.out.println("injecting");
+        //classLoader.registerTransformer("io.github.makamys.optifine3ify.OptiFine3ifyTransformer");
         try {
             Field classLoaderExceptionsField = LaunchClassLoader.class.getDeclaredField("classLoaderExceptions");
             classLoaderExceptionsField.setAccessible(true);
@@ -23,17 +35,6 @@ public class OptiFine3ifyTweaker implements ITweaker {
         } catch(Exception e) {
             e.printStackTrace();
         }
-    }
-    
-    @Override
-    public void acceptOptions(List<String> args, File gameDir, File assetsDir, String profile) {
-        
-    }
-
-    @Override
-    public void injectIntoClassLoader(LaunchClassLoader classLoader) {
-        //System.out.println("injecting");
-        //classLoader.registerTransformer("io.github.makamys.optifine3ify.OptiFine3ifyTransformer");
     }
 
     @Override

@@ -3,7 +3,8 @@ jar {
     manifest {
         attributes (
             'TweakClass': 'io.github.makamys.optifine3ify.OptiFine3ifyTweaker',
-            'TweakOrder': -1000,
+            // OF has TweakOrder -1000, we want to run before it
+            'TweakOrder': -1001,
         )
     }
 }
