@@ -1,1 +1,9 @@
-// Put your project-specific buildscript code in this file
+
+jar {
+    manifest {
+        attributes (
+            'TweakClass': 'io.github.makamys.optifine3ify.OptiFine3ifyTweaker',
+            'TweakOrder': -1000,
+        )
+    }
+}
