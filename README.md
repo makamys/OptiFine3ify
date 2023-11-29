@@ -1,6 +1,6 @@
 # OptiFine3ify
 
-An FML tweaker that makes OptiFine D6 compatible with Java 9 and higher.
+An FML tweaker that makes OptiFine 1.7.10_HD_U_D6 compatible with Java 9 and higher. Does nothing with 1.7.10_HD_U_E7 which is already compatible.
 
 ## Why
 
