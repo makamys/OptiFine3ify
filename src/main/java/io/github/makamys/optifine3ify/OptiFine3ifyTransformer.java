@@ -29,7 +29,7 @@ public class OptiFine3ifyTransformer implements IClassTransformer {
     }
  
     private static byte[] doTransform(byte[] bytes) {
-        LOGGER.info("FMLFastSplashTransformer: Transforming ProgressManager$ProgressBar");
+        LOGGER.info("OptiFine3ifyTransformer: Transforming OptiFineClassTransformer to add modern Java compat");
         
         InsnList callHook = new InsnList();
         callHook.add(new VarInsnNode(ALOAD, 0));

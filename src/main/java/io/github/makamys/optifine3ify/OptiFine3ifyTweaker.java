@@ -1,5 +1,7 @@
 package io.github.makamys.optifine3ify;
 
+import static io.github.makamys.optifine3ify.Constants.LOGGER;
+
 import java.io.File;
 import java.lang.reflect.Field;
 import java.util.List;
@@ -10,11 +12,6 @@ import net.minecraft.launchwrapper.Launch;
 import net.minecraft.launchwrapper.LaunchClassLoader;
 
 public class OptiFine3ifyTweaker implements ITweaker {
-
-    public OptiFine3ifyTweaker() {
-        //OptiFine3ifyInjector.run();
-        
-    }
     
     @Override
     public void acceptOptions(List<String> args, File gameDir, File assetsDir, String profile) {
@@ -23,9 +20,9 @@ public class OptiFine3ifyTweaker implements ITweaker {
 
     @Override
     public void injectIntoClassLoader(LaunchClassLoader classLoader) {
-        System.out.println("injecting");
-        //classLoader.registerTransformer("io.github.makamys.optifine3ify.OptiFine3ifyTransformer");
         try {
+            LOGGER.info("Removing optifine class loader exception");
+            
             Field classLoaderExceptionsField = LaunchClassLoader.class.getDeclaredField("classLoaderExceptions");
             classLoaderExceptionsField.setAccessible(true);
             Set<String> classLoaderExceptions = (Set<String>)classLoaderExceptionsField.get(Launch.classLoader);
