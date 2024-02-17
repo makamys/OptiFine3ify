@@ -1,3 +1,5 @@
+> ### UPDATE: The incompatibility has been [fixed](https://github.com/GTNewHorizons/lwjgl3ify/issues/47#issuecomment-1950239722) in lwjgl3ify 2.0.0-alpha-6, so this mod is no longer necessary.
+
 # OptiFine3ify
 
 An FML tweaker that makes OptiFine 1.7.10_HD_U_D6 compatible with Java 9 and higher. Does nothing with 1.7.10_HD_U_E7 which is already compatible.
